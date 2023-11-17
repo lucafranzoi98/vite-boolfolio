@@ -16,8 +16,10 @@ export default {
 
 <template>
     <div class="card h-100">
-        <img v-if="image.includes('http')" class="card-img-top" :src="image">
-        <img v-else-if="!image.includes('http')" class="card-img-top" :src="base_link + 'storage/' + image">
+        <div v-if="image">
+            <img v-if="image.includes('http')" class="card-img-top" :src="image">
+            <img v-else="!image.includes('http')" class="card-img-top" :src="base_link + 'storage/' + image">
+        </div>
         <div v-else class="m-3">N/A</div>
         <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
