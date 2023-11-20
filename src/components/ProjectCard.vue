@@ -9,7 +9,8 @@ export default {
         description: String,
         code_link: String,
         preview_link: String,
-        technologies: Array
+        technologies: Array,
+        project_slug: String
     }
 }
 </script>
@@ -40,7 +41,7 @@ export default {
             </ul>
         </div>
         <div class="card-footer">
-            <router-link to="/">Show project</router-link>
+            <router-link :to="{name: 'project', params: {slug: project_slug}}">Show project</router-link>
         </div>
     </div>
 </template>

@@ -46,7 +46,8 @@ export default {
                 <div class="col" v-for="project in projects">
                     <ProjectCard :image="project.image" :base_link="base_link" :title="project.title" :type="project.type"
                         :description="project.description" :code_link="project.code_link"
-                        :preview_link="project.preview_link" :technologies="project.technologies"></ProjectCard>
+                        :preview_link="project.preview_link" :technologies="project.technologies"
+                        :project_slug="project.slug"></ProjectCard>
                 </div>
             </div>
         </div>
