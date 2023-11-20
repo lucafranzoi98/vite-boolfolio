@@ -38,7 +38,9 @@ export default {
             <ul class="list-unstyled d-flex gap-1 mt-3" v-if="technologies">
                 <li class="badge bg-dark" v-for="technology in technologies">{{ technology.name }}</li>
             </ul>
-
+        </div>
+        <div class="card-footer">
+            <router-link to="/">Show project</router-link>
         </div>
     </div>
 </template>

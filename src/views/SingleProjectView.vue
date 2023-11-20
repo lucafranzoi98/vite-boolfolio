@@ -1,67 +1,10 @@
 <script>
-import axios from 'axios';
 import ProjectCard from '../components/ProjectCard.vue';
 
 export default {
-    name: 'ProjectsView',
+    name: 'SingleProjectView',
     components: {
         ProjectCard
-    },
-    data() {
-        return {
-            base_link: 'http://127.0.0.1:8000/',
-            pagination_base_link: 'http://127.0.0.1:8000/api/projects',
-            projects: [],
-            activePage: 1,
-            totalPages: null
-        }
-    },
-    methods: {
-        call($url) {
-            axios
-                .get($url)
-                .then(response => {
-                    this.projects = response.data.result.data;
-                    this.totalPages = response.data.result.last_page;
-                })
-                .catch(error => {
-                    console.error(error);
-                })
-        },
-        scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
-        },
-        paginationByNumber($page) {
-            this.call(this.base_link + 'api/projects?page=' + $page);
-            this.activePage = $page;
-            this.scrollToTop();
-        },
-        paginationPrev() {
-            this.activePage--;
-            if (this.activePage < 1) {
-                this.activePage = 1;
-                this.paginationByNumber(1);
-            } else {
-                this.paginationByNumber(this.activePage);
-            }
-            this.scrollToTop();
-        },
-        paginationNext() {
-            this.activePage++;
-            if (this.activePage > this.totalPages) {
-                this.activePage = this.totalPages;
-                this.paginationByNumber(this.totalPages);
-            } else {
-                this.paginationByNumber(this.activePage);
-            }
-            this.scrollToTop();
-        },
-    },
-    mounted() {
-        this.call(this.base_link + 'api/projects')
     }
 }
 </script>
