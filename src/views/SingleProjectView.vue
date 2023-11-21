@@ -34,8 +34,10 @@ export default {
 <template>
     <div class="container mb-3">
 
-        <ProjectCard style="width: 50%;" :image="project.image" :base_link="base_link" :title="project.title" :type="project.type"
-            :description="project.description" :code_link="project.code_link" :preview_link="project.preview_link"
-            :technologies="project.technologies" :project_slug="project.slug"></ProjectCard>
+        <ProjectCard style="width: 50%;" :image="project.image" :base_link="base_link" :title="project.title"
+            :type="project.type" :description="project.description" :code_link="project.code_link"
+            :preview_link="project.preview_link" :technologies="project.technologies" :project_slug="project.slug">
+        </ProjectCard>
+        <router-link to="/projects" class="btn btn-primary mt-4">Return to all projects</router-link>
     </div>
 </template>
