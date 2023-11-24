@@ -42,7 +42,7 @@ export default {
 
         <div class="latest-projects mt-5">
             <h3 class="mb-3">Latest projects</h3>
-            <div class="row row-cols-3 g-3">
+            <div class="row row-cols-3 g-5">
                 <div class="col" v-for="project in projects">
                     <ProjectCard :image="project.image" :base_link="base_link" :title="project.title" :type="project.type"
                         :description="project.description" :code_link="project.code_link"

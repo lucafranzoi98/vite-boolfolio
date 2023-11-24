@@ -71,7 +71,7 @@ export default {
         <h1 class="mb-3">All projects</h1>
 
         <div>
-            <div class="row row-cols-3 g-3">
+            <div class="row row-cols-3 g-5">
                 <div class="col" v-for="project in projects">
                     <ProjectCard :image="project.image" :base_link="base_link" :title="project.title" :type="project.type"
                         :description="project.description" :code_link="project.code_link"
@@ -80,7 +80,7 @@ export default {
                 </div>
             </div>
 
-            <nav class="mt-3">
+            <nav class="mt-4">
                 <ul class="pagination">
                     <li class="page-item" role="button">
                         <span class="page-link" @click="paginationPrev">

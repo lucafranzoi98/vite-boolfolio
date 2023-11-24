@@ -1,1 +1,10 @@
 @use '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+.card-hover{
+    transition: 0.5s;
+}
+
+.card-hover:hover{
+    transform: scale(1.03);
+}
