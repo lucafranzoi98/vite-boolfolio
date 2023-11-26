@@ -5,8 +5,8 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <h1>Contacts</h1>
+    <div class="container text-white">
+        <h1 class="bauhaus mb-4">Contacts</h1>
         <form action="" method="GET">
             <div class="mb-3">
                 <label for="name" class="form-label">Name and Surname</label>
@@ -16,7 +16,7 @@ export default {
                 <label for="mail" class="form-label">Mail</label>
                 <input type="mail" class="form-control" name="mail" id="mail" placeholder="Type your mail">
             </div>
-            <div class="mb-3">
+            <div class="mb-5">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" name="description" id="description" rows="3"></textarea>
             </div>

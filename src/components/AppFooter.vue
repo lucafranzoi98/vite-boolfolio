@@ -6,9 +6,9 @@
 </script>
 
 <template>
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div>Made by Luca Franzoi</div>
+    <footer class="bg-dark text-white py-5">
+        <div class="container pt-5">
+            <div>Made by Luca Franzoi, 2023</div>
         </div>
     </footer>
 </template>

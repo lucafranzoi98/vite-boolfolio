@@ -32,16 +32,21 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <h1>Home</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam sint mollitia iusto corporis saepe repellat
-            vitae, labore commodi cumque sapiente qui eos in. Ipsa, rerum autem? Eaque, unde. Id, asperiores. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Vel, accusantium modi? Libero provident maiores distinctio.
-            Suscipit consectetur sunt rerum eum voluptate adipisci, dolores deleniti ducimus, veritatis quod id et earum.
-        </p>
+    <div class="container text-light">
 
-        <div class="latest-projects mt-5">
-            <h3 class="mb-3">Latest projects</h3>
+        <div class="jumbo row row-cols-md-2">
+            <div class="col-md-8">
+                <h1 class="my-name-home text-uppercase fw-bold">Luca<br>Franzoi</h1>
+                <h2 class="text-uppercase fst-italic">Full-stack web developer</h2>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+                <img src="../assets/img/Me2.0.png" class="my-img-home">
+            </div>
+        </div>
+
+
+        <div class="latest-projects pb-5">
+            <h2 class="mb-4">My latest projects</h2>
             <div class="row row-cols-3 g-5">
                 <div class="col" v-for="project in projects">
                     <ProjectCard :image="project.image" :base_link="base_link" :title="project.title" :type="project.type"
@@ -53,3 +58,5 @@ export default {
         </div>
     </div>
 </template>
+
+<style scoped></style>

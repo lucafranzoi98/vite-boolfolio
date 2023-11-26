@@ -1,5 +1,39 @@
 @use '../node_modules/bootstrap/scss/bootstrap.scss';
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Bauhaus';
+    src: url('./assets/fonts/Bauhaus/BauhausRegular.ttf');
+}
+
+*{
+    font-family: 'Montserrat';
+}
+
+.jumbo{
+    border-bottom: 1px solid white;
+}
+
+.my-name-home{
+    font-family: 'Bauhaus';
+    font-size: 200px;
+}
+
+.bauhaus{
+    font-family: 'Bauhaus';
+}
+
+.my-img-home{
+    width: 90%;
+}
+
+.latest-projects{
+    margin-top: 5rem;
+}
 
 .card-hover{
     transition: 0.5s;
@@ -7,4 +41,8 @@
 
 .card-hover:hover{
     transform: scale(1.03);
+}
+
+footer > div{
+    border-top: 1px solid white;
 }

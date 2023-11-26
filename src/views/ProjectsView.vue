@@ -34,11 +34,6 @@ export default {
                 behavior: 'smooth'
             })
         },
-        paginationByNumber($page) {
-            this.call(this.base_link + 'api/projects?page=' + $page);
-            this.activePage = $page;
-            this.scrollToTop();
-        },
         paginationPrev() {
             this.activePage--;
             if (this.activePage < 1) {
@@ -67,8 +62,8 @@ export default {
 </script>
 
 <template>
-    <div class="container mb-3">
-        <h1 class="mb-3">All projects</h1>
+    <div class="container">
+        <h1 class="mb-3 text-white bauhaus">All projects</h1>
 
         <div>
             <div class="row row-cols-3 g-5">
@@ -81,20 +76,11 @@ export default {
             </div>
 
             <nav class="mt-4">
-                <ul class="pagination">
+                <ul class="pagination d-flex justify-content-between mb-0">
                     <li class="page-item" role="button">
                         <span class="page-link" @click="paginationPrev">
                             <span>&laquo;</span>
                         </span>
-                    </li>
-                    <li class="page-item" role="button" :class="activePage == 1 ? 'active' : ''">
-                        <span class="page-link" @click="paginationByNumber(1)">1</span>
-                    </li>
-                    <li class="page-item" role="button" :class="activePage == 2 ? 'active' : ''">
-                        <span class="page-link" @click="paginationByNumber(2)">2</span>
-                    </li>
-                    <li class="page-item" role="button" :class="activePage == 3 ? 'active' : ''">
-                        <span class="page-link" @click="paginationByNumber(3)">3</span>
                     </li>
                     <li class="page-item" role="button">
                         <span class="page-link" @click="paginationNext">
@@ -103,6 +89,7 @@ export default {
                     </li>
                 </ul>
             </nav>
+
         </div>
     </div>
 </template>

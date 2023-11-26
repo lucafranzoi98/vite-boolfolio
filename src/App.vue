@@ -14,7 +14,7 @@ export default {
 <template>
     <AppHeader></AppHeader>
 
-    <main class="py-5">
+    <main class="bg-dark">
         <router-view></router-view>
     </main>
     

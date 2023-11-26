@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <header class="bg-dark py-3">
+    <header class="bg-dark py-5 shadow">
         <div class="container">
             <nav>
                 <router-link class="text-white text-decoration-none me-3" to="/">Home</router-link>
