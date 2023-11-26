@@ -34,6 +34,17 @@ export default {
                 behavior: 'smooth'
             })
         },
+        paginationByNumber($page) {
+            axios
+                .get(this.base_link + 'api/projects?page=' + $page)
+                .then(response => {
+                    this.projects = response.data.result.data;
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+            this.activePage = $page;
+        },
         paginationPrev() {
             this.activePage--;
             if (this.activePage < 1) {
@@ -62,33 +73,22 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container pb-5">
         <h1 class="mb-3 text-white bauhaus">All projects</h1>
 
         <div>
             <div class="row row-cols-3 g-5">
                 <div class="col" v-for="project in projects">
-                    <ProjectCard :image="project.image" :base_link="base_link" :title="project.title" :type="project.type"
-                        :description="project.description" :code_link="project.code_link"
-                        :preview_link="project.preview_link" :technologies="project.technologies"
-                        :project_slug="project.slug"></ProjectCard>
+                    <ProjectCard :project="project"
+                    :base_link="base_link"></ProjectCard>
                 </div>
             </div>
 
-            <nav class="mt-4">
-                <ul class="pagination d-flex justify-content-between mb-0">
-                    <li class="page-item" role="button">
-                        <span class="page-link" @click="paginationPrev">
-                            <span>&laquo;</span>
-                        </span>
-                    </li>
-                    <li class="page-item" role="button">
-                        <span class="page-link" @click="paginationNext">
-                            <span>&raquo;</span>
-                        </span>
-                    </li>
-                </ul>
-            </nav>
+            <div class="d-flex justify-content-between text-white mt-5 fs-2">
+                <i class="fa-solid fa-circle-chevron-left" @click="paginationPrev()" role="button"></i>
+    
+                <i class="fa-solid fa-circle-chevron-right" @click="paginationNext()" role="button"></i>
+            </div>
 
         </div>
     </div>
